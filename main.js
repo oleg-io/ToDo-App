@@ -46,7 +46,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
   container.append(todoHeader);
   container.append(todoForm.form);
-  container.append(todoList);
+
+  todoForm.form.addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+    if (!todoForm.input.value) {
+      return;
+    };
+
+    container.append(todoList);
+
+
+    let todoItem = createItem(todoForm.input.value);
+
+    todoItem.deleteButton.addEventListener('click', () => {
+      todoItem.newItem.remove();
+    });
+
+    todoItem.doneButton.addEventListener('click', () => {
+      todoItem.newItem.classList.toggle('green');
+    });
+
+    todoList.append(todoItem.newItem);
+
+    todoForm.input.value = '';
+
+  });
+
+  function createItem(name) {
+
+    let newItem = document.createElement('li');
+    let groupButton = document.createElement('div');
+    let doneButton = document.createElement('button');
+    let deleteButton = document.createElement('button');
+    
+    groupButton.classList.add('btn-container');
+    newItem.classList.add('task');
+    newItem.textContent = name;
+    doneButton.classList.add('done');
+    doneButton.textContent = 'Готово';
+    deleteButton.classList.add('delete');
+    deleteButton.textContent = 'Удалить';
+    
+    groupButton.append(doneButton);
+    groupButton.append(deleteButton);
+    newItem.append(groupButton);
+    
+    return {
+      newItem,
+      doneButton,
+      deleteButton,
+    }
+    
+  };
+
 });
 
 })();

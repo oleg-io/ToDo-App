@@ -2,41 +2,73 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .container {
   margin: 0 auto;
   max-width: 800px;
-  min-height: 200px;
-  background: #e2eff5;
-  border-radius: 5px;
 }
-
-h2 {
-  padding-top: 25px;
+.main-header {
+  padding: 10px;
   text-align: center;
   font-family: sans-serif;
+  background: #d7e8e9;
+  border-radius: 5px;
 }
-
+input {
+  width: 80%;
+}
+.button-wrapper {
+  width: 20%;
+}
+.item-btn {
+  width: 100%;
+}
 .list-form {
   margin: 0 auto;
   padding: 20px 40px;
   border-radius: 25px;
 }
-
 .todo-form {
+  padding: 5px;
+  background: #cae0df;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-input {
-  width: 80%;
+.todo-list {
+  padding: 5px 20px;
+  list-style: none;
 }
-
-.button-wrapper {
-  width: 20%;
+.task {
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #cecece6e;
+  border-radius: 5px;
 }
-
-.item-btn {
-  width: 100%;
+.btn-container {
+  padding: 5px;
+  background: #e8e8e8;
+  border-radius: 5px;
+}
+.done {
+  padding: 5px 15px;
+  background: #4ab437;
+  color: #fff;
+  border: none;
+  border-radius: 3px 0 0 3px;
+}
+.delete {
+  padding: 5px 15px;
+  background: #dc3c3c;
+  color: #fff;
+  border: none;
+  border-radius: 0 3px 3px 0;
+}
+.green {
+  background: #4ab43736;
+}
+.red {
+  background: #b9444436;
 }
